@@ -328,7 +328,7 @@ if __name__ == "__main__":
         scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[10,18,25,32], gamma=0.1)
     else:
         scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[20, 28, 35], gamma=0.1)
-    d_scheduler = torch.optim.lr_scheduler.MultiStepLR(d_optimizer, milestones=[20, 28, 35], gamma=0.1)
+    # d_scheduler = torch.optim.lr_scheduler.MultiStepLR(d_optimizer, milestones=[20, 28, 35], gamma=0.1)
     criterion = nn.CrossEntropyLoss()
     epoch = 40
 
@@ -366,7 +366,7 @@ if __name__ == "__main__":
         prev_time = cur_time
         
         scheduler.step()
-        d_scheduler.step()
+        # d_scheduler.step()
 
     print('Training finished!  Best Test metric: %.4f(epoch %d)' % (best_metric * 100, best_epoch))
     print('') 
